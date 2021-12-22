@@ -13,14 +13,14 @@
 			$conexion=mysqli_connect($servidor,$usuario,$contra);
 
 			//se genera el código sql que tomará el valor según lo que indica
-			$sql="CREATE DATABASE proyecto";
+			$sql="CREATE DATABASE proyectoAxelGa";
 			//se ejecuta la conexión con la base de datos y el código sql, y se almacena en una variable
 			$consulta=mysqli_query($conexion,$sql); 
 			if ($consulta) {
 				$servidor="localhost";
 				$usuario="root";
 				$contra="";
-				$db="proyecto";
+				$db="proyectoAxelGa";
 				$conexion=mysqli_connect($servidor,$usuario,$contra,$db);
 				$creardomicilio="CREATE TABLE domicilio (id_domicilio INT AUTO_INCREMENT UNIQUE PRIMARY KEY, calle VARCHAR(30),
 					num_casa INT, colonia VARCHAR(30))";
@@ -29,7 +29,7 @@
 					$servidor="localhost";
 					$usuario="root";
 					$contra="";
-					$db="proyecto";
+					$db="proyectoAxelGa";
 					$conexion=mysqli_connect($servidor,$usuario,$contra,$db);
 					$crearhabitantes="CREATE TABLE habitantes (num_habitante INT AUTO_INCREMENT UNIQUE, 
 					nombre VARCHAR(15), apellido_p VARCHAR(15), apellido_m VARCHAR(15), 
@@ -39,7 +39,7 @@
 						$servidor="localhost";
 						$usuario="root";
 						$contra="";
-						$db="proyecto";
+						$db="proyectoAxelGa";
 						$conexion=mysqli_connect($servidor,$usuario,$contra,$db);
 						$usuarios="CREATE TABLE usuarios (nombre VARCHAR(5) NOT NULL, contrasena VARCHAR(32) NOT NULL)";
 						$consulta=mysqli_query($conexion,$usuarios);
@@ -47,7 +47,7 @@
 							$servidor="localhost";
 							$usuario="root";
 							$contra="";
-							$db="proyecto";
+							$db="proyectoAxelGa";
 							$conexion=mysqli_connect($servidor,$usuario,$contra,$db);
 							$ayuda="CREATE TABLE ayuda (ayuda INT)";
 							$consulta=mysqli_query($conexion,$ayuda);
@@ -67,7 +67,7 @@
 			$servidor="localhost";
 			$usuario="root";
 			$contra="";
-			$db="proyecto";
+			$db="proyectoAxelGa";
 			$conexion=mysqli_connect($servidor,$usuario,$contra,$db);
 			$ayuda="SELECT * FROM usuarios WHERE nombre='$_REQUEST[idUsuario]' AND contrasena=MD5('$_REQUEST[clave]')";
 			$consulta=mysqli_query($conexion,$ayuda);
